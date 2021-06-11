@@ -1,7 +1,7 @@
 version: '3.0'
 services:
   pg:
-    container_name: postgres_my_api
+    container_name: postgres_api_video
     image: postgres
     ports: 
       - '5432:5432'
@@ -11,7 +11,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: my_api
+    container_name: api_video
     volumes:
       - .:/app
     ports:
@@ -21,4 +21,4 @@ services:
     environment:
       PG_PASSWORD: secure 
       PG_USER: postgres
-      PG_HOST: postgres_my_api
+      PG_HOST: postgres_api_video
