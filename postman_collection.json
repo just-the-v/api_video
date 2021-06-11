@@ -1,0 +1,534 @@
+{
+	"info": {
+		"_postman_id": "0fed410a-119b-43a0-9aa7-47a4d443494e",
+		"name": "MyApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01 - user creation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "coucou",
+							"type": "text"
+						},
+						{
+							"key": "pseudo",
+							"value": "papa",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "papa@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/user",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02 - authentification",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "login",
+							"value": "papa@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/auth",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03 - user deletion",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.o95I2k-exABsm1LgDsOU61Va_DfNEBiuJxlfK70Hr_g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/user/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04 - user update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1Mn0.RGBUgBECQj5mAx-gr9ar_8bQ0YZyl-pW7WWQFizK1pg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "papapap",
+							"type": "text"
+						},
+						{
+							"key": "pseudo",
+							"value": "aosijndfaouno",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "aspidmpidmnp@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/user/2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05 - user list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.o95I2k-exABsm1LgDsOU61Va_DfNEBiuJxlfK70Hr_g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/users?page=1&perPage=10",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "perPage",
+							"value": "10"
+						},
+						{
+							"key": "pseudo",
+							"value": "minh.runolfsson",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "06 - user by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.mm6s_jRVtLemP8cnciVeyVf5FWlJhJPj80LjxQIDVfk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/user/2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "07 - video creation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.o95I2k-exABsm1LgDsOU61Va_DfNEBiuJxlfK70Hr_g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "source",
+							"type": "file",
+							"src": "/Users/beelee_the_bee/Desktop/video.mov"
+						},
+						{
+							"key": "name",
+							"value": "CAVA?",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/user/2/video",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"user",
+						"2",
+						"video"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "08 video list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/videos?duration=4&name=CAVA&user=pap&perPage=50&page=1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"videos"
+					],
+					"query": [
+						{
+							"key": "duration",
+							"value": "4"
+						},
+						{
+							"key": "name",
+							"value": "CAVA"
+						},
+						{
+							"key": "user",
+							"value": "pap"
+						},
+						{
+							"key": "perPage",
+							"value": "50"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "09 - video list by user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/videos?duration=4&name=CAVA&user=pap&perPage=50&page=1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"videos"
+					],
+					"query": [
+						{
+							"key": "duration",
+							"value": "4"
+						},
+						{
+							"key": "name",
+							"value": "CAVA"
+						},
+						{
+							"key": "user",
+							"value": "pap"
+						},
+						{
+							"key": "perPage",
+							"value": "50"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10 - encoding video by id",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0OX0.bUuSCKXBFJynMSWiuBh_697QL3G3mv05iLSE9gBlkE0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "format",
+							"value": "144",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"value": "CAVA_400",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/video/29",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"video",
+						"29"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11 - video update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.mm6s_jRVtLemP8cnciVeyVf5FWlJhJPj80LjxQIDVfk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "JE VOULAOS METTRE UN  NOM",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/video/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"video",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12 - video deletion",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozfQ.CsukxU0DnkMLLoSHAbpJKr2o6-SedaaEf0tMtip67d8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/video/3",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"video",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "13 - comment creation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1Mn0.RGBUgBECQj5mAx-gr9ar_8bQ0YZyl-pW7WWQFizK1pg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "source",
+							"type": "file",
+							"src": "/Users/beelee_the_bee/Desktop/video.mov"
+						},
+						{
+							"key": "name",
+							"value": "CAVA?",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/video/33/comment",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"video",
+						"33",
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "14 - comment list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.o95I2k-exABsm1LgDsOU61Va_DfNEBiuJxlfK70Hr_g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/video/33/comments?page=1&perPage=2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"video",
+						"33",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "perPage",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:3000"
+		}
+	]
+}
